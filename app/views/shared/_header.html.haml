@@ -1,0 +1,17 @@
+#header
+  .title
+    %a{:href => "/"} My Opinion
+  .link
+    %ul#nav
+      - if user_signed_in?
+        %li
+          = link_to "トピック", topics_index_path
+        %li
+          = link_to "ログアウト", destroy_user_session_path, method: :delete
+        %li
+          = link_to "マイページ", users_show_path(current_user.id)
+      - else
+        %li
+          = link_to "ログイン", new_user_session_path
+        %li
+          = link_to "新規登録", new_user_registration_path

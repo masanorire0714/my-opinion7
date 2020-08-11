@@ -1,0 +1,22 @@
+.mypage
+  .mypage-title
+    マイページ
+  .mypage-main
+    .profile_icon
+      - if @user.profile_image? 
+        = image_tag @user.profile_image.url, :size => '300x300'
+      - else
+        = image_tag "user_icon.png"
+    %ul.profile
+      .profile__title
+        名前
+      %li.profile__content
+        = @user.nickname
+      .profile__title
+        経歴
+      %li.profile__content-carrer
+        = @user.profile_text
+  .profile_edit
+    .profile_edit__main
+      = link_to "編集", edit_user_path(current_user.id)
+      

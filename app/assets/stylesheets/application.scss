@@ -1,0 +1,100 @@
+body{
+  background-image: url(jjj.png);
+  background-size: cover;
+}
+
+#header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+  margin: 0px;
+}
+
+.title{
+  background-color: white;
+  margin: 5px;
+  padding: 10px;
+  
+}
+
+#nav{
+  display: flex;
+  
+}
+
+li{
+  list-style: none;
+  background-color:white;
+  margin: 5px;
+  padding: 10px;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+.toast{
+  text-align: center;
+}
+
+.toast .notice{
+  background-color: chartreuse;
+  color: white;
+  padding: 10px;
+}
+
+.toast .alert{
+  background-color: red;
+  padding: 10px;
+}
+
+.all{
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.sign-up{
+ margin: 10px;
+ font-family: serif;
+ font-size: 30px;
+}
+
+.main-user{
+  width: 30vw;
+  text-align: center;
+  background-color: white;
+  margin: 150px 0 0 0 ;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.username{
+  height: 30px;
+  width: 25vw; 
+}
+
+.email{
+  height: 30px;
+  width: 25vw;
+}
+
+.password{
+  height: 30px;
+  width: 25vw;
+}
+
+.sign{
+  padding: 10px;
+}
+
+.log-in{
+  font-size: 30px;
+  margin: 0px 0 5px 0;
+}
+
+@import "modeluse/home";
+@import "modeluse/users";
+@import "modeluse/topics";

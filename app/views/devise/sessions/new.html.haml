@@ -1,0 +1,21 @@
+.all
+  .all-all
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .main-user
+        .log-in
+          ログイン
+        .field
+          = f.label :email, "メールアドレス"
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email",:placeholder => "Email", class: "email"
+        .field
+          = f.label :password, "パスワード"
+          %br/
+          = f.password_field :password, autocomplete: "current-password",:placeholder => "Password", class: "password"
+        - if devise_mapping.rememberable?
+          .field
+            = f.check_box :remember_me
+            = f.label :remember_me
+        .actions
+          = f.submit "Log in", class: "sign"
+        = render "devise/shared/links"

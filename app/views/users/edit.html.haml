@@ -1,0 +1,18 @@
+= form_for(current_user) do |f|
+  .mypage
+    .mypage-title
+      プロフィール編集
+    .mypage-main
+      .profile_icon
+        = f.file_field :profile_image, class: "post-image"
+      %ul.profile
+        .profile__title
+          名前
+        %li.profile__content
+          = f.text_field :nickname
+        .profile__title
+          経歴
+        %li.profile__content
+          = f.text_area :profile_text, class: "career", size: "80x5"
+        %li
+          = f.submit class: "sendform__create"

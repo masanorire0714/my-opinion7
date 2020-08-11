@@ -1,0 +1,32 @@
+.all
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = render "devise/shared/error_messages", resource: resource
+    .main-user
+      .log-in
+        新規登録
+      .field
+        = f.label :email, "メールアドレス"
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email",:placeholder => "Email", class: "email"
+      .field
+        = f.label :password, "パスワード"
+        - if @minimum_password_length
+          %em
+            (#{@minimum_password_length} 文字以上で入力)
+        %br/
+        = f.password_field :password, autocomplete: "new-password",:placeholder => "Password", class: "password"
+      .field
+        = f.label :password_confirmation, "パスワード"
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "new-password",:placeholder => "Password", class: "password"
+      .field
+        = f.label :nickname, "名前"
+        %br/
+        = f.text_field :nickname, autocomplete: "nickname", :placeholder => "名前", class: "password"
+      .field
+        = f.label :profile_text, "経歴"
+        %br/
+        = f.text_area :profile_text, autocomplete: "text", :placeholder => "自分のこれまでのキャリア、経験", class: "password", :size => "200x400"
+      .actions
+        = f.submit "Sign up", class: "sign"
+      = render "devise/shared/links"

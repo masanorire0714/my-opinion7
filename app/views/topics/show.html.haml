@@ -1,0 +1,25 @@
+.main
+  .main__sab
+    .main-bar
+      .title-welcome
+        %h1= @topic.title
+      .comment
+        .content
+          - @posts.each do |post|
+            .content-profile
+              .content-profile__icon
+                - if post.user.profile_image?
+                  = image_tag post.user.profile_image.url
+                - else
+                  = image_tag "user_icon.png"
+              .content-profile__name
+                = post.user.nickname
+              .content-profile__data
+                = post.created_at.strftime("%Y年%m月%d日 %H時%M分")
+              .content-profile__career
+                \&gt;
+            .text
+              %p
+                = post.content
+      .post-form
+        = link_to "投稿", posts_new_path

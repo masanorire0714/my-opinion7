@@ -1,0 +1,9 @@
+.posttext
+  %a.posttext__text あなたの意見を教えてください
+= form_for @newpost, :url => posts_create_path do |f|
+  %ul
+    %li
+      = f.text_area :content, class: "postform__post", size: "100x30"
+      = f.hidden_field :topic_id
+    %li
+      = f.submit class: "sendform__create"
