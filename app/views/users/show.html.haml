@@ -4,7 +4,7 @@
   .mypage-main
     .profile_icon
       - if @user.profile_image? 
-        = image_tag @user.profile_image.url, :size => '300x300'
+        = image_tag @user.profile_image.url, :size => '400x400', :class => "profile_icon_main"
       - else
         = image_tag "user_icon.png"
     %ul.profile
